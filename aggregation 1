@@ -1,0 +1,53 @@
+public class AddressInfo {
+    String street,city,state,postalCode;
+
+    public AddressInfo(String street, String city,String state,String postalCode)
+    {
+        this.street=street;
+        this.city=city;
+        this.state=state;
+        this.postalCode=postalCode;
+    }
+}
+
+public class InsuranceInfo {
+    String policyName;
+    int policyId;
+    public InsuranceInfo(String policyName, int policyId)
+    {
+        this.policyId=policyId;
+        this.policyName=policyName;
+    }
+}
+
+public class Employeee {
+    String name;
+    AddressInfo addressInfo;
+    InsuranceInfo insuranceInfo;
+    public Employeee(String name, AddressInfo addressInfo, InsuranceInfo insuranceInfo)
+    {
+        this.name=name;
+        this.addressInfo=addressInfo;
+        this.insuranceInfo=insuranceInfo;
+
+    }
+    public void display()
+    {
+        System.out.println("Name of Employee : "+this.name);
+        System.out.println("Address of Employee: "+
+                addressInfo.street+", "+addressInfo.city+", "+
+                addressInfo.state+", "+addressInfo.postalCode);
+        System.out.println("Insurance information: "+
+                insuranceInfo.policyName+", "+insuranceInfo.policyId);
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        AddressInfo addressInfo= new AddressInfo("Sector 4", "Uttara", "Dhaka", "1711");
+        InsuranceInfo insuranceInfo =new InsuranceInfo("Life Insurance", 123);
+        Employeee employeee =new Employeee("Mr. Rahim",addressInfo, insuranceInfo );
+        employeee.display();
+    }
+}
